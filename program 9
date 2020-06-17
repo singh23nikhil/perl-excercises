@@ -1,0 +1,24 @@
+#Question 9:  To count prime numbers from 1 to 1000 and display it
+
+print "enter the limit\n";
+$limit=<STDIN>;
+$count=0;
+print "1 is not a prime number\n";
+for($i=2;$i<=$limit;$i++)
+{
+   $zero_remainder_found=0;
+   for($j=2;$j<$i;$j++)
+   {
+       if($i%$j==0)
+       {
+        $zero_remainder_found=1;
+        last;
+       }
+    }
+   if(!$zero_remainder_found)
+   {
+    print "$i is a prime number \n";
+    $count++;
+   }
+}
+print "total prime numbers are $count";
