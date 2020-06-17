@@ -1,0 +1,8 @@
+#Question 5:   To print every element of array on next line
+
+my @names=("ab","cd","ef","gh","ij","kl","mn","op","yz","az");
+$sizeofnames=@names;
+for($i=0;$i<$sizeofnames;$i++)
+{
+    print "$names[$i]\n";
+}
