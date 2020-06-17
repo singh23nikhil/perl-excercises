@@ -1,0 +1,26 @@
+#Question 2:  This program take the input from a file, modifies the content of the file for eg replaces "::" with " " and ";" with "/" and "." with "+". And then writes into the output file
+
+
+#!usr/bin/perl
+
+open(f1,"<in1.txt") || die("in1 not found");
+open(f3,">out1.txt");
+
+my $first_line=<f1>;
+$first_line=~ tr{::}{ };
+print $first_line;
+print f3 $first_line;
+
+#my $slash='/';
+$first_line=<f1>;
+$first_line=~ tr{;}{/};  #can use tr{}{}; in place of tr/;///; as it will give error
+print $first_line;
+print f3 $first_line;
+
+$first_line=<f1>;
+$first_line=~ tr{.}{+};
+print $first_line;
+print f3 $first_line;
+
+close(f1);
+close(f3);
