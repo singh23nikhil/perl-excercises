@@ -1,0 +1,30 @@
+#Question 1:   To find the sum of number of first line of file 1 with first line of file 2 and the subtraction of second number of line 2 in file 1 from second number of line 2 in file 2 and write the output in another file
+
+#!/usr/bin/perl
+
+$first_file = "test1.txt";
+$second_file = "test2.txt";
+
+open(f1,"$first_file") || die("first_file not found");
+open(f2,"$second_file") || die ("second_file not found");
+open(f3,">output_file.txt");
+
+$first_file_line1 = <f1>;
+print "first_file_line1: $first_file_line1";
+$first_file_line2 = <f1>;
+print "first_file_line2: $first_file_line2";
+
+$second_file_line1 = <f2>;
+print "second_file_line1: $second_file_line1";
+$second_file_line2 = <f2>;
+print "second_file_line2: $second_file_line2";
+
+$output_file_line1 = $first_file_line1 + $second_file_line1;
+$output_file_line2 = $second_file_line2 - $first_file_line2;
+
+print f3 "$output_file_line1\n";
+print f3 "$output_file_line2";
+
+close(f1);
+close(f2);
+close(f3);
