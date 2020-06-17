@@ -1,0 +1,23 @@
+#Question 4:  To remove duplicate entries in an array
+
+#by making use of CPAN
+
+use List::MoreUtils qw(uniq);
+
+my @array=("tea","coffee","sugar","sugar","milk","milk","tea","rain","forest","tea");
+my @new_array= uniq(@array);
+print "@array\n";
+print "@new_array\n";
+
+#another way of writing the program using subroutines
+
+# or can create a function
+#sub uniq {
+#          my %seen;
+#          grep !$seen{$_}++, @_;
+#         }
+
+#my @array=("tea","coffee","sugar","sugar","milk","milk","tea","rain","forest","tea");
+#my @new_array= uniq(@array);
+#print "@array\n";
+#print "@new_array\n";
