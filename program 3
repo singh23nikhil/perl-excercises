@@ -1,0 +1,42 @@
+#Question 3:  This program reads two input files, makes some modifications on the contents, does some operations and then writes them into another file
+
+
+#!usr/bin/perl
+
+open(f1,"<ag1.txt") || die("ag1 not found");
+open(f2,"<ag2.txt") || die("ag2 not found");
+open(f3,">pg1.txt");
+
+$ag1_line1 = <f1>;
+print "ag1_line1: $ag1_line1\n";
+$ag1_line1=~tr{.}{ };
+print "ag1_line1: $ag1_line1\n";
+
+$ag1_line2 = <f1>;
+print "ag1_line2: $ag1_line2\n";
+$ag1_line2=~tr{"}{ };
+print "ag1_line2: $ag1_line2\n";
+$ag1_line2=~tr{,}{ };
+print "ag1_line2: $ag1_line2\n";
+$ag1_line2=~s/^\s+//;   #for removing white space from left side basically a trim from left side until the text appears
+print "ag1_line2: $ag1_line2\n";
+$ag1_line2=~tr/ //s;    #for removing double spaces between text to single space
+print "ag1_line2: $ag1_line2\n";
+
+$ag2_line1 = <f2>;
+print "ag2_line1: $ag2_line1\n";
+
+$ag2_line2 = <f2>;
+print "ag2_line2: $ag2_line2\n";
+
+chomp($ag1_line1); chomp($ag2_line2);
+$pg1_line1=$ag1_line1." ".$ag2_line2;
+print f3 "$pg1_line1\n";
+
+chomp($ag1_line2); chomp($ag2_line1);
+$pg1_line2=$ag1_line2.$ag2_line1;
+print f3 $pg1_line2;
+
+close(f1);
+close(f2);
+close(f3);
