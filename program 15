@@ -1,0 +1,16 @@
+#Question 15:  The input string is ABC,DKL,EPF and the output should be CBA;LKD;FPE;
+
+
+my $string="ABC,DKL,EPF";
+my @arr= split /,/,$string;
+my @arr2=();
+print "@arr\n";
+$len=@arr;
+
+for($i=0;$i<$len;$i++)
+{
+    $arr[$i]=reverse($arr[$i]);
+    #print "$arr[$i] ";
+    push(@arr2,$arr[$i].';');
+}
+print join '',@arr2;
