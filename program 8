@@ -1,0 +1,27 @@
+#Question 8:  To replace TAB character in a file with comma
+
+open(f1,"<q9input.txt");
+open(f3,">q9output.txt");
+
+$first_line=<f1>;
+print "$first_line\n";
+
+#$first_line =~ s/\t/,/g;
+$first_line =~ s/\s{2,}/,/g;
+print "$first_line\n";
+$first_line =~ s/\t/,/g;
+print $first_line;
+
+$second_line=<f1>;
+print "$second_line\n";
+
+$second_line =~ s/\s{2,}/,/g;
+print "$second_line\n";
+$second_line =~ s/\t/,/g;
+print $second_line;
+
+print f3 "$first_line";
+print f3 "$second_line";
+
+close(f1);
+close(f3);
