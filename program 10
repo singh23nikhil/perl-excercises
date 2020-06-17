@@ -1,0 +1,21 @@
+#Question 10: 
+#(1). To make first letter of every word capital
+
+$content="perl is a great scripting language";
+print "$content\n";
+
+@words=split(/ /,$content);
+foreach $w (@words)
+{
+   $w=ucfirst(lc($w));  #we are using side effect of foreach loop
+} 
+$content=join(' ',@words);
+print "$content\n";
+
+#second part of the question 
+#(2). To get output with inverted commas around every word
+ 
+my $new_content= "\"perl\" \"is\" \"a\" \"great\" \"scripting\" \"language\"";
+print "$new_content\n";
+$new_content=~tr{ }{,};
+print $new_content;
