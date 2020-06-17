@@ -1,0 +1,18 @@
+#Question 7:  To count the number of times a particular word comes in a string
+
+
+my $str="TCL is best, perl is good, perl is best";
+$str=~ tr{,}{ };
+print $str;
+my %count;
+
+my @array = split / /, $str;
+
+foreach $str (@array)
+{
+        $count{$str}++;
+}
+
+foreach $str (sort keys %count) {
+    printf "%-31s %s\n", $str, $count{$str};
+}
