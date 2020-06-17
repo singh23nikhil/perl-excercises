@@ -1,0 +1,13 @@
+#Question 13: To write the elements of array of each index in reverse order
+
+my @arr=("ABC","DKL","EFP");
+my @arr2=();
+print "@arr\n";
+$len=@arr;
+for($i=0;$i<$len;$i++)
+{
+    $arr[$i]=reverse($arr[$i]);
+    #print "$arr2[$i] ";
+    push(@arr2,$arr[$i]);
+}
+print join ' ',@arr2;
