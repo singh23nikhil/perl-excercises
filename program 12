@@ -1,0 +1,20 @@
+#Question 12:  To replace the numbers inside a file with another number keeping other statement/string as it is
+
+open(f1,"<q13_input.txt");
+#open(f3,">q13_output.txt");
+print "enter the value of the version\n";
+my $version=<STDIN>;
+chomp($version);
+
+my $first_line=<f1>;
+print "$first_line\n";
+my @arr= split / /,$first_line;
+for($i=0;$i<length($first_line);$i++)
+{
+    if($arr[$i]==10.10)
+    {
+        $arr[$i]=$version;
+    }
+}
+$new_str= join ' ',@arr;
+print $new_str;
