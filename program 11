@@ -1,0 +1,18 @@
+#Question 11: To prompts the user for a string and then displays it back in a reverse order with hyphens in between the letters
+
+use Data::Dumper qw(Dumper);
+
+print "enter the string\n";
+$str=<STDIN>;
+print "$str\n";
+
+$str=reverse($str);
+print "$str\n";
+
+@char= split //,$str;
+print Dumper \@char;   #for printing the each index of array
+my $new_str= join '-',@char;
+print "$new_str\n";
+
+$new_str =~ s/.//;   #for removing the first character of a string
+print $new_str;
